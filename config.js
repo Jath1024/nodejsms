@@ -8,14 +8,33 @@ var environments = {};
 
 // Staging (default) environment
 environments.staging = {
-    'port' : 3000,
-    'envName' : 'staging'
+    'httpPort' : 3000,
+    'httpsPort' : 3001,
+    'envName' : 'staging',
+    'hashingSecret' : 'thisIsASecret',
+    'maxChecks' : 5,
+    'twilio' : {
+        'accountSid' : 'AC492d6095c6b72b4e0c95835c36c8a1df',
+        'authToken' : '0b061bc3a022876fe6cd901bcd83139d',
+        'fromPhone' : '7757782079'
+
+    }
 };
 
 // Production environment
 environments.production = {
-    'port' : 5000,
-    'envName' : 'production'
+    'httpPort' : 5000,
+    'httpsPort' : 5001,
+    'envName' : 'production',
+    'hashingSecret' : 'thisIsAlsoASecret',
+    'maxChecks' : 5,
+    'twilio' : {
+        'accountSid' : 'AC492d6095c6b72b4e0c95835c36c8a1df',
+        'authToken' : '0b061bc3a022876fe6cd901bcd83139d',
+        'fromPhone' : '7757782079'
+
+    }
+
 };
 
 // Determine which environment was passed as a command-line argument
